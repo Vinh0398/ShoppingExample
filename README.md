@@ -29,7 +29,7 @@
 
 * Home Page:
 
-![Alt text](https://github.com/Vinh0398/ShoppingExample/blob/master/Images/HomePage.jpeg "Home Page")
+![Alt text](https://github.com/Vinh0398/ShoppingExample/blob/master/Images/Homepage.jpeg "Home Page")
 
 * Đăng nhập:
 
