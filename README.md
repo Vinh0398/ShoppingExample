@@ -15,7 +15,7 @@
 
 * **Technology** : Java, Spring MVC, JSP, Maven.
 * **Application Servicer**: Apache Tomcat Server.
-* **Database** : MySQL (In Warm Sever)
+* **Database** : MySQL (In Wamp Sever)
 
 ### Kiến trúc:
 1. Project kiến trúc gồm:
