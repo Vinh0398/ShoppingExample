@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.AuthorRepository;
 import model.Author;
+import model.Member;
 import dao.ProductRepository;
+import dao.MemberRepository;
 
 @Controller
 @RequestMapping("admin/author")
@@ -20,9 +22,7 @@ public class AuthorController {
 
 	@RequestMapping("index.html")
 	public String index(Model model) {
-
 		List<Author> listAuthor = repository.getAuthors();
-
 		model.addAttribute("list", listAuthor);
 		return "author.index";
 	}
@@ -55,5 +55,4 @@ public class AuthorController {
 		repository.delete(id);
 		return "redirect:/admin/author/index.html";
 	}
-
 }

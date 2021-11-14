@@ -33,30 +33,12 @@ public class UploadController {
 		}
 		return fileName;
 	}
-
-	@RequestMapping("simple.html")
-	public String simple() {
-		return "upload";
-	}
-
-	@RequestMapping(value = "simple.html", method = RequestMethod.POST)
-	public String simple(Model model, @RequestParam("f") MultipartFile part, HttpServletRequest request) {
-		String path = request.getServletContext().getRealPath("/upload/");
-		try {
-			String name = upload(path, part);
-			model.addAttribute("name", name);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return "upload";
-	}
-
-	@RequestMapping("multi.html")
+	@RequestMapping("upload.html")
 	public String multi() {
-		return "multiupload";
+		return "upload";
 	}
 
-	@RequestMapping(value = "multi.html", method = RequestMethod.POST)
+	@RequestMapping(value = "upload.html", method = RequestMethod.POST)
 	public String multi(Model model, @RequestParam("f") MultipartFile[] parts, HttpServletRequest request) {
 		String path = request.getServletContext().getRealPath("/upload/");
 		try {
@@ -64,7 +46,7 @@ public class UploadController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return "multiupload";
+		return "upload";
 	}
 	private static List<String> upload(String path, MultipartFile[] parts) throws IOException {
 		List<String> files = new ArrayList<String>(parts.length);

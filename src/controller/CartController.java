@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import dao.CartRepository;
 import dao.InvoiceRepository;
 import model.Cart;
+import model.Invoice;
 import util.Helper;
 
 @Controller
@@ -29,7 +30,6 @@ public class CartController {
 			if (cookie.getName().equals("cart")) {
 				id = cookie.getValue();
 			}
-
 		}
 		if (id == null) {
 			id = Helper.randomString(32);
@@ -43,10 +43,25 @@ public class CartController {
 		return "redirect:/cart/index.html";
 	}
 
-	@RequestMapping("cart.html")
+	@RequestMapping("index.html")
 	public String index(Model model, @CookieValue("cart") String id) {
 		model.addAttribute("title", "Your Cart");
 		model.addAttribute("list", repository.getCarts(id));
 		return "cart.index";
 	}
+
+	@RequestMapping("checkout.html")
+	public String checkout(Model model, @CookieValue("cart") String id) {
+		model.addAttribute("title", "Check Out");
+		model.addAttribute("list", repository.getCarts(id));
+		return "cart.checkout";
+	}
+
+	@RequestMapping(value = "checkout.html", method = RequestMethod.POST)
+	public String checkout(Model model, Invoice obj, @CookieValue("cart") String id) {
+		obj.setId(id);
+		invoiceRepository.add(obj);
+		return "redirect:/order/detail/" + obj.getId();
+	}
+
 }

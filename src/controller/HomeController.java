@@ -15,18 +15,20 @@ public class HomeController {
 	ProductRepository repository = new ProductRepository();
 	private static int size = 6;
 	
-	@RequestMapping(value = {"index.html" ,"index.html/{p}" })
+	@RequestMapping(value = {"/","index.html" ,"index.html/{p}" })
 	public String index(Model model, @PathVariable(value = "p", required = false) Integer p) {
+		if(p==null) {
+			p = 1;
+		}
 		model.addAttribute("title", "MiniShop");
 		model.addAttribute("n",(int)Math.ceil(repository.count() / (double)size));
-		model.addAttribute("list", repository.getProducts(1, size));
+		model.addAttribute("list", repository.getProducts(p, size));
 		return "home.index";
-		
 	}
 	@RequestMapping("detail.html/{id}")
 	public String detail(Model model, @PathVariable("id") int id) {
 		Product o = repository.getProduct(id);
-		model.addAttribute("title", o.getTitle());
+		//model.addAttribute("title", o.getTitle());
 		model.addAttribute("o", o);
 		return "home.detail";
 	}
@@ -35,5 +37,11 @@ public class HomeController {
 		model.addAttribute("title", "Result for" + q);
 		model.addAttribute("list", repository.search(q));
 		return "home.search";
+	}
+	@RequestMapping("browser.html/{id}")
+	public String browser (Model model, @PathVariable("id") int id) {
+		Product o = repository.getProduct(id);
+		model.addAttribute("o", o);
+		return "home.browser";
 	}
 }
