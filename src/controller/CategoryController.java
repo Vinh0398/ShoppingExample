@@ -17,11 +17,8 @@ public class CategoryController {
 	
 	@RequestMapping("index.html")
 	public String index(Model model) {
-		
 		List<Category> listCategory = repository.getsCategory();
-		
 		model.addAttribute("list", listCategory);
-		
 		return "category.index";
 	}
 
@@ -29,9 +26,7 @@ public class CategoryController {
 	public String add(Model model) {
 		List<Category> list = repository.getParents();
 		model.addAttribute("list", list);
-		
 		model.addAttribute("obj", new Category());
-		
 		return "category.add";
 	}
 	@RequestMapping(value = "add.html", method = RequestMethod.POST)

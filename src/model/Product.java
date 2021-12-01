@@ -16,7 +16,7 @@ public class Product {
 		this.imageUrl = imageUrl;
 	}
 	public Product() {
-		
+		super();
 	}
 	public int getId() {
 		return id;

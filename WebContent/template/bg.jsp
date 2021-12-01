@@ -22,15 +22,15 @@
 	<div class="sidebar">
 
 		<ul>
-			<li><a href="${pageContext.request.contextPath}/home/index.html">Home</a></li>
+			<li><a href="${pageContext.request.contextPath}/home/index.html">Trang Chủ</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/upload/simple.html">Upload
 					File</a></li>
 			<li><a
 				href="${pageContext.request.contextPath}/upload/multi.html">Multi
 					Upload</a></li>
-			<li><a href="${pageContext.request.contextPath}/sendemail.html">Send
-					Email</a></li>
+			<%-- <li><a href="${pageContext.request.contextPath}/sendemail.html">Send
+					Email</a></li> --%>
 			<li><a href="${pageContext.request.contextPath}/admin/author/index.html">Author</a></li>
 		</ul>
 	</div>

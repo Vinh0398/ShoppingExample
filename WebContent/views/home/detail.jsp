@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
 <div class="products">
 	<div class="col-4">
 		<img src="${pageContext.request.contextPath}/upload/${o.imageUrl}">
@@ -11,10 +14,10 @@
 			ISBN: <b>${o.isbn}</b>
 		</p>
 		<p>
-			Pages: <b>${o.pages}</b>
+			Số Trang: <b>${o.pages}</b>
 		</p>
 		<p>
-			Price: <b>${o.price}</b>
+			Giá: <b>${o.price}</b>
 		</p>
 		<form method="post"
 			action="${pageContext.request.contextPath}/cart/add.html">
@@ -24,3 +27,4 @@
 		</form>
 	</div>
 </div>
+</html>

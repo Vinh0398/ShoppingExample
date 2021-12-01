@@ -8,7 +8,7 @@
 	<definition name="bghome" template="/template/bghome.jsp">
 		<put-attribute name="title" value="Title" />
 	</definition>
-	<definition name="bghome" template="/template/bghome.jsp">
+	<definition name="bgpanel" template="/template/bgpanel.jsp">
 		<put-attribute name="title" value="Title" />
 	</definition>
 	<definition name="template" extends="bg">
@@ -17,11 +17,8 @@
 			value="/views/template.jsp" />
 	</definition>
 	<definition name="upload" extends="bg">
-		<put-attribute name="content" value="/views/upload.jsp" />
-	</definition>
-	<definition name="multiupload" extends="bg">
 		<put-attribute name="content"
-			value="/views/multiupload.jsp" />
+			value="/views/upload/upload.jsp" />
 	</definition>
 	<definition name="sendmail" extends="bg">
 		<put-attribute name="content"
@@ -39,21 +36,37 @@
 		<put-attribute name="content"
 			value="/views/author/edit.jsp" />
 	</definition>
-	<definition name="category.add" extends="bghome">
+	<definition name="home.index" extends="bghome">
 		<put-attribute name="content"
 			value="/views/home/index.jsp" />
 	</definition>
-	<definition name="category.add" extends="bghome">
+	<definition name="home.detail" extends="bghome">
 		<put-attribute name="content"
 			value="/views/home/detail.jsp" />
 	</definition>
-	<definition name="category.add" extends="bghome">
+	<definition name="home.search" extends="bghome">
 		<put-attribute name="content"
 			value="/views/home/search.jsp" />
 	</definition>
+	<definition name="home.browser" extends="bghome">
+		<put-attribute name="content"
+			value="/views/home/browser.jsp" />
+	</definition>
+	<definition name="category.index" extends="bghome">
+		<put-attribute name="content"
+			value="/views/category/index.jsp" />
+	</definition>
 	<definition name="category.add" extends="bghome">
 		<put-attribute name="content"
-			value="/views/carts/index.jsp" />
+			value="/views/category/add.jsp" />
+	</definition>
+	<definition name="cart.index" extends="bghome">
+		<put-attribute name="content"
+			value="/views/cart/index.jsp" />
+	</definition>
+	<definition name="cart.add" extends="bghome">
+		<put-attribute name="content"
+			value="/views/cart/index.jsp" />
 	</definition>
 	<definition name="other.index" extends="bghome">
 		<put-attribute name="content"
@@ -61,6 +74,16 @@
 	</definition>
 	<definition name="other.detail" extends="bghome">
 		<put-attribute name="content"
-			value="/view/other/detail.jsp" />
+			value="/views/other/detail.jsp" />
+	</definition>
+	<definition name="author.register" extends="bgpanel">
+		<put-attribute name="title" value="Register" />
+		<put-attribute name="content"
+			value="/views/author/register.jsp" />
+	</definition>
+	<definition name="author.logon" extends="bgpanel">
+		<put-attribute name="title" value="Log On" />
+		<put-attribute name="content"
+			value="/views/author/logon.jsp" />
 	</definition>
 </tiles-definitions>
